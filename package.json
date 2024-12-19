@@ -10,7 +10,8 @@
     "migration:run": "npx prisma migrate deploy",
     "test:load-envs": "dotenv -e .env.test",
     "test:migration:run": "npm run test:load-envs prisma migrate deploy",
-    "test": "npm run test:load-envs -- jest -- --coverage --runInBand"
+    "test:coverage": "npm run test:load-envs -- jest -- --coverage --runInBand",
+    "test": "npm run test:load-envs -- jest -- --runInBand"
   },
   "keywords": [],
   "author": "",
