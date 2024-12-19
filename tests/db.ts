@@ -5,6 +5,7 @@ export function connectDb(): void {
   prisma = new PrismaClient();
 }
 
-export async function disconnectDB(): Promise<void> {
-  await prisma?.$disconnect();
+export async function cleanDb() {
+  await prisma.ticket.deleteMany({});
+  await prisma.event.deleteMany({});
 }
